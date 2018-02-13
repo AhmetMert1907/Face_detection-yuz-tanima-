@@ -1,7 +1,7 @@
 #cv2 import
 import cv2
 
-#loading the cascade
+#loading the cascade(cascadeleri opencv nin github sayfasında bulabilirsiniz. Cascade yükledik ve tanımladık. Hepsi birer xml dosyasıdır.)
 face_cascade = cv2.CascadeClassifier('C:/Users/MERT/Desktop/Computer_Vision_A_Z_Template_Folder/Module 1 - Face Recognition/haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('C:/Users/MERT/Desktop/Computer_Vision_A_Z_Template_Folder/Module 1 - Face Recognition/haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('C:/Users/MERT/Desktop/Computer_Vision_A_Z_Template_Folder/Homework_Challenge_Solution/haarcascade_smile.xml')
@@ -25,6 +25,7 @@ def detect(gray, frame):
             cv2.rectangle(roi_color, (ux, uy), (ux+uw, uy+uh), (0, 0, 150), 2)
     return frame
 
+#open webcam
 video_capture = cv2.VideoCapture(0)
 while True:
     _, frame = video_capture.read()
